@@ -2,9 +2,24 @@
 
 public class Program
 {
-    public static double ConvertInchesToCentimeters(double inches)
+    public static double ConvertUnits(double value, string unit)
     {
-        return inches * 2.54;
+        switch (unit)
+        {
+            
+            case "cm":
+                return value * 2.54;
+            case "mm":
+                return ConvertInchesToMilimeters(value);
+            default:
+                throw new ArgumentException("Invalid unit");
+        }
+        
+    }
+
+    public static double ConvertInchesToMilimeters(double inches)
+    {
+        throw new NotImplementedException("Function not implemented)");
     }
 
     public static void Main(string[] args)
@@ -16,15 +31,16 @@ public class Program
         }
         else
         {
-            Console.WriteLine(ConvertInchesToCentimeters(10));
+            ConvertUnits(10, "cm");
         }
     }
+    
 
     public static void runTests(string[] args)
     {
-        TestFunction(() => ConvertInchesToCentimeters(10) == 25.4, "Convert 10 inches to centimeters");
-        TestFunction(() => ConvertInchesToCentimeters(0) == 0, "Convert 0 inches to centimeters");
-        TestFunction(() => ConvertInchesToCentimeters(-1) == -2.54, "Convert -1 inches to centimeters");
+        TestFunction(() => (10) == 25.4, "Convert 10 inches to milimeters");
+        TestFunction(() => (0) == 0, "Convert 0 inches to centimeters");
+        TestFunction(() => (-1) == -2.54, "Convert -1 inches to centimeters");
     }
 
     public static void TestFunction(Func<bool> evaluation, string description)
