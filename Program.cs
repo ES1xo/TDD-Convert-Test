@@ -58,7 +58,7 @@ public class Program
     {
         TestFunction(() => ConvertUnits(10, "-mm") == 254, "Convert 10 inches to milimeters");
         TestFunction(() => ConvertUnits(0, "-cm") == 0, "Convert 0 inches to centimeters");
-        TestFunction(() => ConvertUnits(-1, "-cm") == -2.54, "Convert -1 inches to centimeters");
+        TestFunction(() => ConvertUnits(-1, "-m") == -2.54, "Convert -1 inches to centimeters");
     }
 
     public static void TestFunction(Func<bool> evaluation, string description)
