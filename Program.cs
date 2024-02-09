@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Reflection.Metadata.Ecma335;
+using Microsoft.VisualBasic;
 
 public class Program
 {
@@ -7,10 +10,10 @@ public class Program
         switch (unit)
         {
             
-            case "cm":
+            case "-cm":
                 return value * 2.54;
-            case "mm":
-                return ConvertInchesToMilimeters(value);
+            case "-mm":
+                return value * 25.4;
             default:
                 throw new ArgumentException("Invalid unit");
         }
@@ -24,23 +27,37 @@ public class Program
 
     public static void Main(string[] args)
     {
+        double inches = 0;
+
         if (args.Length > 0 && args[0] == "-t")
 
         {
             runTests(args);
+            return;
         }
-        else
+        if (args.Length != 2)
         {
-            ConvertUnits(10, "cm");
+            Console.WriteLine("Usage: dotnet run <inches> <-unit>");
+            return;
         }
+        if (!double.TryParse(args[0], out inches))
+        {
+            Console.WriteLine("Invalid number");
+            return;
+        }   
+        
+        string unit = args[1].ToLower();
+
+        double result = ConvertUnits(inches, unit);
+        Console.WriteLine($"Result: {result} {unit}");
     }
     
 
     public static void runTests(string[] args)
     {
-        TestFunction(() => (10) == 25.4, "Convert 10 inches to milimeters");
-        TestFunction(() => (0) == 0, "Convert 0 inches to centimeters");
-        TestFunction(() => (-1) == -2.54, "Convert -1 inches to centimeters");
+        TestFunction(() => ConvertUnits(10, "-mm") == 254, "Convert 10 inches to milimeters");
+        TestFunction(() => ConvertUnits(0, "-cm") == 0, "Convert 0 inches to centimeters");
+        TestFunction(() => ConvertUnits(-1, "cm") == -2.54, "Convert -1 inches to centimeters");
     }
 
     public static void TestFunction(Func<bool> evaluation, string description)
