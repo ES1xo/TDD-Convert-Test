@@ -11,15 +11,12 @@ public class Program
                 return value * 2.54;
             case "-mm":
                 return value * 25.4;
+            case "-m":
+                return value * 0.0254;
             default:
                 throw new ArgumentException("Invalid unit");
         }
         
-    }
-
-    public static double ConvertInchesToMilimeters(double inches)
-    {
-        throw new NotImplementedException("Function not implemented)");
     }
 
     public static void Main(string[] args)
@@ -58,7 +55,7 @@ public class Program
     {
         TestFunction(() => ConvertUnits(10, "-mm") == 254, "Convert 10 inches to milimeters");
         TestFunction(() => ConvertUnits(0, "-cm") == 0, "Convert 0 inches to centimeters");
-        TestFunction(() => ConvertUnits(-1, "-m") == -2.54, "Convert -1 inches to centimeters");
+        TestFunction(() => ConvertUnits(-1, "-m") == -0.0254, "Convert -1 inches to meters");
     }
 
     public static void TestFunction(Func<bool> evaluation, string description)
