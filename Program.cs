@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Reflection.Metadata.Ecma335;
-using Microsoft.VisualBasic;
 
 public class Program
 {
@@ -26,7 +23,11 @@ public class Program
     }
 
     public static void Main(string[] args)
+
+    
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+
         double inches = 0;
 
         if (args.Length > 0 && args[0] == "-t")
@@ -57,7 +58,7 @@ public class Program
     {
         TestFunction(() => ConvertUnits(10, "-mm") == 254, "Convert 10 inches to milimeters");
         TestFunction(() => ConvertUnits(0, "-cm") == 0, "Convert 0 inches to centimeters");
-        TestFunction(() => ConvertUnits(-1, "cm") == -2.54, "Convert -1 inches to centimeters");
+        TestFunction(() => ConvertUnits(-1, "-cm") == -2.54, "Convert -1 inches to centimeters");
     }
 
     public static void TestFunction(Func<bool> evaluation, string description)
