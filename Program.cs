@@ -20,17 +20,17 @@ public class Program
         {
             if (evaluation())
             {
-                // Must be true
-                Console.WriteLine($"🟢 Test:  {description}");
+                
+                Console.WriteLine($"🟢 Test Succesful:  {description}");
             }
             else
             {
-                Console.WriteLine($"🔴 Test: {description}");
+                Console.WriteLine($"🔴 Test Failed: {description}");
             }
         }
         catch (Exception)
         {
-            Console.WriteLine($"🔴 Test: {description}");
+            Console.WriteLine($"🔴 Test Failed: {description}");
         }
     }
 }
