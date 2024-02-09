@@ -1,0 +1,14 @@
+C:\Users\erlen\TDD-Convert-Test\bin\Debug\net7.0\TDD-Convert-Test.exe
+C:\Users\erlen\TDD-Convert-Test\bin\Debug\net7.0\TDD-Convert-Test.deps.json
+C:\Users\erlen\TDD-Convert-Test\bin\Debug\net7.0\TDD-Convert-Test.runtimeconfig.json
+C:\Users\erlen\TDD-Convert-Test\bin\Debug\net7.0\TDD-Convert-Test.dll
+C:\Users\erlen\TDD-Convert-Test\bin\Debug\net7.0\TDD-Convert-Test.pdb
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\TDD-Convert-Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\TDD-Convert-Test.AssemblyInfoInputs.cache
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\TDD-Convert-Test.AssemblyInfo.cs
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\TDD-Convert-Test.csproj.CoreCompileInputs.cache
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\TDD-Convert-Test.dll
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\refint\TDD-Convert-Test.dll
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\TDD-Convert-Test.pdb
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\TDD-Convert-Test.genruntimeconfig.cache
+C:\Users\erlen\TDD-Convert-Test\obj\Debug\net7.0\ref\TDD-Convert-Test.dll
